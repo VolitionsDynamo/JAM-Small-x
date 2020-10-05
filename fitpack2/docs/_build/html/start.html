@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gettin Started &mdash; JAM 12-04-19 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial/index.html" />
+    <link rel="prev" title="JAM ECOSYSTEM" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> JAM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">JAM ECOSYSTEM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gettin Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setups">setups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-installation">Alternative installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observables/index.html">Observables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="farm.html">JLab computing for JAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/index.html">Simulation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Gettin Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/start.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gettin-started">
+<h1>Gettin Started<a class="headerlink" href="#gettin-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dependencies">
+<h2>dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Only Linux and OSX is supported</p></li>
+<li><p>We recommend to install anaconda (python3)</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create and activate a new python enviroment</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda create --name  jam  <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
+conda activate jam
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Clone the fitpack repository</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone  git@github.com:QCDHUB/fitpack2
+<span class="nb">cd</span> fitpack2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install dependencies on your enviroment</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -r deps
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Install core and default libraries</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./pacman.py install
+</pre></div>
+</div>
+<p>Additional repos for observables can be installed by
+adjusting the file <code class="docutils literal notranslate"><span class="pre">repos.tex</span></code>. Also to updates on all
+repos can be done via</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./pacman.py update
+</pre></div>
+</div>
+</div>
+<div class="section" id="setups">
+<h2>setups<a class="headerlink" href="#setups" title="Permalink to this headline">¶</a></h2>
+<p>Some environmental variables  need to be set. For csh</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>setenv FITPACK <span class="nv">$PWD</span>
+setenv PATH <span class="si">${</span><span class="nv">FITPACK</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+setenv PYTHONPATH <span class="si">${</span><span class="nv">FITPACK</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>For bash</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">path</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nb">export</span> <span class="nv">FITPACK</span><span class="o">=</span><span class="nv">$path</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$FITPACK</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$FITPACK</span>:<span class="nv">$PYTHONPATH</span>
+</pre></div>
+</div>
+<p>Alternatively source the setup file <code class="docutils literal notranslate"><span class="pre">fitpack2/setup.sh</span></code> or
+<code class="docutils literal notranslate"><span class="pre">fitpack2/setup.csh</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> setup.sh
+</pre></div>
+</div>
+<p>To test the installation do</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> fitlib
+./driver.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternative-installation">
+<h2>Alternative installation<a class="headerlink" href="#alternative-installation" title="Permalink to this headline">¶</a></h2>
+<p>The following repos can only be modified
+via pull request.</p>
+<ul class="simple">
+<li><p>fitlib</p></li>
+<li><p>tools</p></li>
+</ul>
+<p>You can forked them into your account
+and before running <code class="docutils literal notranslate"><span class="pre">./pacman.py</span> <span class="pre">install</span></code>
+replace <code class="docutils literal notranslate"><span class="pre">QCDHUB</span></code> by your github username
+in order to clone from you account.</p>
+<p>To update your fork with recent changes at the fitpack upstream
+you need to do the following within fitlib and tools</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add upstream git@github.com:JeffersonLab/fitpack.git
+git fetch upstream
+</pre></div>
+</div>
+<p>This is done only once. After that you can sync the fork using</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull upstream master
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Checkout the tutorials</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="JAM ECOSYSTEM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, N. Sato
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

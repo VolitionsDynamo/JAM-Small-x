@@ -1,0 +1,24 @@
+prediction   reaction        idx                  col  npts       chi2  chi2/npts       norm 
+     False      pidis      10001              COMPASS    11      20.25       1.84       0.98 
+     False      pidis      10002              COMPASS    11      10.42       0.95       0.97 
+     False      pidis      10003              COMPASS    35      48.93       1.40       1.03 
+     False      pidis      10004                  EMC    10       2.83       0.28       0.98 
+     False      pidis      10005               HERMES     7       1.85       0.26 
+     False      pidis      10006               HERMES    25      48.73       1.95 
+     False      pidis      10007               HERMES    25      17.32       0.69 
+     False      pidis      10016      JLabHB(EG1DVCS)    73      66.60       0.91 
+     False      pidis      10017      JLabHB(EG1DVCS)   117     361.76       3.09 
+     False      pidis      10021           SLAC(E143)    56      75.67       1.35       1.02 
+     False      pidis      10022           SLAC(E143)    56      55.81       1.00       1.07 
+     False      pidis      10027           SLAC(E155)    65      68.81       1.06       1.01 
+     False      pidis      10029           SLAC(E155)    65      95.72       1.47       1.16 
+     False      pidis      10032          SLACE80E130    19      15.24       0.80 
+     False      pidis      10033                  SMC     7       4.15       0.59 
+     False      pidis      10034                  SMC    11      18.89       1.72 
+     False      pidis      10035                  SMC     7      11.68       1.67 
+     False      pidis      10036                  SMC    11      10.73       0.98 
+     False      pidis      10039         JLabHB(EG1b)    20      17.31       0.87 
+     False      pidis      10040         JLabHB(EG1b)    92      80.36       0.87 
+     False      pidis      10043         JLabHB(EG1b)    88     107.94       1.23 
+     False      pidis      10044         JLabHB(EG1b)   385     374.82       0.97 
+                                                       1196    1515.83       1.27           

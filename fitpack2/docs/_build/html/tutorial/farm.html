@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>using the farm &mdash; JAM 12-04-19 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysis" href="analysis.html" />
+    <link rel="prev" title="Level 0: from scratch" href="level0.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> JAM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">JAM ECOSYSTEM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Gettin Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="level0.html">Level 0: from scratch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">using the farm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stept-1-prepare-the-input-py">Stept 1: prepare the input.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stept-2-test-locally-if-the-program-runs-under-the-input-py">Stept 2: test locally if the program runs under the input.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stept-3-send-jobs-to-farm">Stept 3: send jobs to farm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-1-send-jobs-to-farm-via-farm">option 1: send jobs to farm via farm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-2-send-jobs-to-farm-via-sfarm-special-permissions-are-needed">option 2: send jobs to farm via sfarm (special permissions are needed)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../input.html">Input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observables/index.html">Observables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farm.html">JLab computing for JAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/index.html">Simulation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorial</a> &raquo;</li>
+        
+      <li>using the farm</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/farm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-the-farm">
+<h1>using the farm<a class="headerlink" href="#using-the-farm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="stept-1-prepare-the-input-py">
+<h2>Stept 1: prepare the input.py<a class="headerlink" href="#stept-1-prepare-the-input-py" title="Permalink to this headline">¶</a></h2>
+<p>We introduce a new element called steps in the <cite>input.py</cite>.
+It looks like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--steps</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+
+<span class="c1">#--idis and no hera</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;dep&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;active distributions&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10010</span><span class="p">)</span> <span class="c1"># proton   | F2            | SLAC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10011</span><span class="p">)</span> <span class="c1"># deuteron | F2            | SLAC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10016</span><span class="p">)</span> <span class="c1"># proton   | F2            | BCDMS</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10017</span><span class="p">)</span> <span class="c1"># deuteron | F2            | BCDMS</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10020</span><span class="p">)</span> <span class="c1"># proton   | F2            | NMC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10021</span><span class="p">)</span> <span class="c1"># d/p      | F2d/F2p       | NMC</span>
+</pre></div>
+</div>
+<p>There are some advantages of using this which we will explain in detail.
+But for testing purposes, use the <cite>input.py</cite> template from
+<cite>fitpack/workspace/</cite></p>
+</div>
+<div class="section" id="stept-2-test-locally-if-the-program-runs-under-the-input-py">
+<h2>Stept 2: test locally if the program runs under the input.py<a class="headerlink" href="#stept-2-test-locally-if-the-program-runs-under-the-input-py" title="Permalink to this headline">¶</a></h2>
+<p>Open the <cite>test</cite> script and look for the lines</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--ATTENTION: user dependent paths</span>
+<span class="n">user</span>    <span class="o">=</span><span class="s1">&#39;username&#39;</span>
+<span class="n">fitpack</span> <span class="o">=</span><span class="s1">&#39;path-to-fitpack&#39;</span>
+<span class="n">wdir</span>    <span class="o">=</span><span class="s1">&#39;path-to-working-directory&#39;</span>
+<span class="n">python</span>  <span class="o">=</span><span class="s1">&#39;path-to-your-python-binary&#39;</span>
+</pre></div>
+</div>
+<p>Setup the entries according to your username. i.e.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user</span>    <span class="o">=</span><span class="s1">&#39;nsato&#39;</span>
+<span class="n">path</span>    <span class="o">=</span><span class="s1">&#39;/w/general-scifs17exp/JAM/&#39;</span>
+<span class="n">fitpack</span> <span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/nsato/jam/fitpack&#39;</span><span class="o">%</span><span class="n">path</span>
+<span class="n">wdir</span>    <span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/nsato/jam/pions-qt&#39;</span><span class="o">%</span><span class="n">path</span>
+<span class="n">python</span>  <span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/apps/anaconda2/bin/python&#39;</span><span class="o">%</span><span class="n">path</span>
+</pre></div>
+</div>
+<p>Run the script</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./test
+</pre></div>
+</div>
+<p>If it works, the program should start the fitting process.</p>
+</div>
+<div class="section" id="stept-3-send-jobs-to-farm">
+<h2>Stept 3: send jobs to farm<a class="headerlink" href="#stept-3-send-jobs-to-farm" title="Permalink to this headline">¶</a></h2>
+<p>Here you have two options depending on your username permissions</p>
+<div class="section" id="option-1-send-jobs-to-farm-via-farm">
+<h3>option 1: send jobs to farm via farm<a class="headerlink" href="#option-1-send-jobs-to-farm-via-farm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>As in the test case,  adujust the paths and usernames.</p></li>
+<li><p>example:  …</p></li>
+</ul>
+</div>
+<div class="section" id="option-2-send-jobs-to-farm-via-sfarm-special-permissions-are-needed">
+<h3>option 2: send jobs to farm via sfarm (special permissions are needed)<a class="headerlink" href="#option-2-send-jobs-to-farm-via-sfarm-special-permissions-are-needed" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Check that the setup works</p>
+<blockquote>
+<div><p><cite>./sfarm  0  -d results/stepXX   -p results/stepYY</cite></p>
+<p>where</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><cite>results/stepXX</cite>: new directory where the current run will store data</p></li>
+<li><p><cite>results/stepYY</cite>: priors from which the current run will get guess parameters
+If the code seems to run, then it works</p></li>
+</ul>
+</li>
+<li><p>Send all the jobs to the farm</p>
+<blockquote>
+<div><p>./sfarm  1  -d results/stepXX   -p results/stepYY</p>
+</div></blockquote>
+</li>
+<li><p>To monitor the status you can just check the number of msr files you have
+collected</p>
+<p><cite>watch -n 3 “ls results/stepXX/msr | wc -l”</cite></p>
+<p>you can use the following:</p>
+<p><cite>squeue -u &lt;username&gt;</cite></p>
+<p>To cancel all the jobs</p>
+<p><cite>scancel -u &lt;username&gt;</cite></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="level0.html" class="btn btn-neutral float-left" title="Level 0: from scratch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, N. Sato
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

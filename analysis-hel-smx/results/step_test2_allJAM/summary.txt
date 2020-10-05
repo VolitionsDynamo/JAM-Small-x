@@ -1,0 +1,24 @@
+prediction   reaction        idx                  col  npts       chi2  chi2/npts       norm 
+     False      pidis      10001              COMPASS    11      43.13       3.92       1.04 
+     False      pidis      10002              COMPASS    11      88.27       8.02       0.96 
+     False      pidis      10003              COMPASS    35      93.13       2.66       0.99 
+     False      pidis      10004                  EMC    10       9.55       0.96       0.99 
+     False      pidis      10005               HERMES     7       3.52       0.50 
+     False      pidis      10006               HERMES    25      61.99       2.48 
+     False      pidis      10007               HERMES    25      61.01       2.44 
+     False      pidis      10016      JLabHB(EG1DVCS)    73     132.73       1.82 
+     False      pidis      10017      JLabHB(EG1DVCS)   117     408.96       3.50 
+     False      pidis      10021           SLAC(E143)    56     103.83       1.85       1.07 
+     False      pidis      10022           SLAC(E143)    56     212.20       3.79       1.07 
+     False      pidis      10027           SLAC(E155)    65     122.74       1.89       1.07 
+     False      pidis      10029           SLAC(E155)    65     382.75       5.89       1.12 
+     False      pidis      10032          SLACE80E130    19      29.14       1.53 
+     False      pidis      10033                  SMC     7       4.27       0.61 
+     False      pidis      10034                  SMC    11      23.70       2.15 
+     False      pidis      10035                  SMC     7      18.57       2.65 
+     False      pidis      10036                  SMC    11      42.67       3.88 
+     False      pidis      10039         JLabHB(EG1b)    20      20.15       1.01 
+     False      pidis      10040         JLabHB(EG1b)    92      79.15       0.86 
+     False      pidis      10043         JLabHB(EG1b)    88     208.55       2.37 
+     False      pidis      10044         JLabHB(EG1b)   385     474.74       1.23 
+                                                       1196    2624.74       2.19           

@@ -1,0 +1,124 @@
+#!/usr/bin/env python
+import time
+import os,sys
+import argparse
+import subprocess
+
+
+#--from tools
+from tools.randomstr import id_generator
+from tools.tools import checkdir,load
+
+#--user dependent paths
+user    ='dadamiak'
+#path    ='/w/general-scifs17exp/JAM/'
+path    ='/w/jam-sciwork18'
+fitpack ='%s/dadamiak/fitpack2'%path
+wdir    ='%s/dadamiak/analysis-hel-smx'%path
+python  ='%s/apps/anaconda2/bin/python'%path
+
+
+template="""#!/bin/csh
+#SBATCH --account=theory
+#SBATCH --nodes 1
+#SBATCH --partition=production
+#SBATCH --cpus-per-task 5
+#SBATCH --mem=2G
+#SBATCH --time=0-96:00:00
+#SBATCH --constraint=general
+#SBATCH --job-name="<name>"
+#SBATCH --output=<wdir>/<directory>/out/<name>.out
+#SBATCH --error=<wdir>/<directory>/out/<name>.err
+setenv FITPACK <fitpack>
+setenv PYTHONPATH <fitpack>:/work/JAM/apps/lhapdf2/lib/python2.7/site-packages/
+<python>  <fitpack>/fitlib_smx/maxlike.py -n 2 -v <verbose> <input>.py -msrh "mv <<fname>> <wdir>/<directory>/msr/" <prior>
+"""
+
+template=template.replace('<python>',python)
+template=template.replace('<fitpack>',fitpack)
+template=template.replace('<wdir>',wdir)
+
+
+def gen_script(track,directory,step,prior=None,INPUT='input',verbose=5):
+    fname='jam-%s-%s'%(step,id_generator(size=10))
+    script=template[:]
+    script=script.replace('<name>',fname)
+    script=script.replace('<track>',track)
+    script=script.replace('<directory>',directory)
+    script=script.replace('<verbose>',str(verbose))
+    script=script.replace('<input>',str(INPUT))
+    if  prior==None:
+        script=script.replace('<prior>','')
+    else:
+        script=script.replace('<prior>','-p %s'%prior)
+
+    F=open('current.sbatch','w')
+    F.writelines(script)
+    F.close()
+
+def pexit(msg):
+    print(msg)
+    sys.exit()
+
+if __name__=='__main__':
+
+
+    ap = argparse.ArgumentParser()
+    msg =" 0: flat"
+    msg+=" 1: with priors"
+    msg+=" 2: with opt-priors"
+
+    ap.add_argument('task'             ,type=int,help=msg)
+    ap.add_argument('-d','--directory' ,type=str,default='unamed'
+                                       ,help='directory name to store results')
+    ap.add_argument('-p','--priors'    ,type=str,default='unamed' ,help='priors')
+    ap.add_argument('-n','--njobs'     ,type=int,default=1 ,help='number of jobs')
+    ap.add_argument('-t','--test'      ,type=bool,default=False ,help='test flag')
+    ap.add_argument('-s','--step'      ,type=str,default='01', help='step for job naming purposes')
+    ap.add_argument('-i','--INPUT'     ,type=str,default='input', help='input file to use')
+    args = ap.parse_args()
+
+    if args.directory=='unamed': pexit('specify -d')
+
+    checkdir('%s/out'%args.directory)
+    checkdir('%s/msr'%args.directory)
+    os.system('cp %s.py %s/input.py'%(args.INPUT,args.directory))
+
+    if  args.task==0:
+
+          cnt=0
+          track='theory'
+          while 1:
+              cnt+=1
+              print cnt
+              gen_script(track,args.directory,args.step,None)
+              if args.test:
+                  os.system('source current.sbatch')
+                  break
+              else:
+                  os.system('sbatch current.sbatch')
+              if cnt==args.njobs: break
+
+    elif  args.task==1 or args.task==2:
+          track='theory'
+          if args.task==1: path2priors='%s/%s/msr-inspected'%(wdir,args.priors)
+          if args.task==2:
+              path2priors='%s/%s/msr-opt-priors'%(wdir,args.priors)
+              print 'Using opt-priors...'
+          msr=os.listdir(path2priors)
+          path2running='%s/%s/out'%(wdir,args.directory)
+          running = [_.replace('jam-','').replace('.out','.msr') \
+                     for _ in os.listdir(path2running)\
+                     if _.endswith('err')==False]
+
+          done = os.listdir('%s/%s/msr'%(wdir,args.directory))
+          cnt=0
+          for prior in msr:
+              cnt+=1
+              #if cnt==2: break
+              print('%d/%d'%(cnt,len(msr)))
+              if prior in done: continue
+              gen_script(track,args.directory,args.step,'%s/%s'%(path2priors,prior),INPUT=args.INPUT)
+              os.system('sbatch current.sbatch')
+              if args.test: break
+              time.sleep(0.2)

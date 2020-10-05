@@ -1,0 +1,24 @@
+prediction   reaction        idx                  col  npts       chi2  chi2/npts       norm 
+     False      pidis      10001              COMPASS     9     198.84      22.09       1.13 
+     False      pidis      10002              COMPASS     9     660.98      73.44       0.93 
+     False      pidis      10003              COMPASS    29     574.51      19.81       1.11 
+     False      pidis      10004                  EMC     8      57.33       7.17       1.01 
+     False      pidis      10005               HERMES     5      10.55       2.11 
+     False      pidis      10006               HERMES    15     348.33      23.22 
+     False      pidis      10007               HERMES    15     681.98      45.47 
+     False      pidis      10016      JLabHB(EG1DVCS)    22     973.39      44.25 
+     False      pidis      10017      JLabHB(EG1DVCS)    32   55444.46    1732.64 
+     False      pidis      10021           SLAC(E143)    38     238.21       6.27       1.00 
+     False      pidis      10022           SLAC(E143)    38    2080.18      54.74       0.93 
+     False      pidis      10027           SLAC(E155)    44     276.08       6.27       0.99 
+     False      pidis      10029           SLAC(E155)    44    3478.56      79.06       0.80 
+     False      pidis      10032          SLACE80E130     6      55.82       9.30 
+     False      pidis      10033                  SMC     7       5.97       0.85 
+     False      pidis      10034                  SMC     9      79.99       8.89 
+     False      pidis      10035                  SMC     7      35.20       5.03 
+     False      pidis      10036                  SMC     9     362.87      40.32 
+     False      pidis      10039         JLabHB(EG1b)     1       1.09       1.09 
+     False      pidis      10040         JLabHB(EG1b)    26      83.53       3.21 
+     False      pidis      10043         JLabHB(EG1b)     8     187.34      23.42 
+     False      pidis      10044         JLabHB(EG1b)   110    2282.91      20.75 
+                                                        491   68118.12     138.73           

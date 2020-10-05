@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Level 0: from scratch &mdash; JAM 12-04-19 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="using the farm" href="farm.html" />
+    <link rel="prev" title="Tutorial" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> JAM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">JAM ECOSYSTEM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Gettin Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Level 0: from scratch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fit-unpolarized-pdfs">1. Fit unpolarized PDFs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input-py">input.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#driver-py">driver.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#compute-pdfs-and-dis-observables">2. Compute PDFs and DIS observables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-steps">3. Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="farm.html">using the farm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../input.html">Input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observables/index.html">Observables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farm.html">JLab computing for JAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/index.html">Simulation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorial</a> &raquo;</li>
+        
+      <li>Level 0: from scratch</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/level0.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="level-0-from-scratch">
+<h1>Level 0: from scratch<a class="headerlink" href="#level-0-from-scratch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Fit unpolarized PDFs from world inclusive DIS data (<em>single fit</em>).</p></li>
+<li><p>Use the fitted parameters to compute PDFs and DIS observables</p></li>
+<li><p>Next steps</p></li>
+</ol>
+</div>
+<div class="section" id="fit-unpolarized-pdfs">
+<h2>1. Fit unpolarized PDFs<a class="headerlink" href="#fit-unpolarized-pdfs" title="Permalink to this headline">¶</a></h2>
+<p>Create a empty directory <strong>workspace</strong> (or with any other name)
+which does not need to be inside the fitpack.
+e.g.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jam
+jam/fitpack
+jam/workspace/
+</pre></div>
+</div>
+<p>In what follow we will create python scripts under <em>jam/workspace</em>.
+Specifically we will create two scripts</p>
+<ul class="simple">
+<li><p><strong>input.py</strong>: this specifies what to fit (datasets, pdfs, etc)</p></li>
+<li><p><strong>driver.py</strong>: this will controls the JAM machinery</p></li>
+</ul>
+<div class="section" id="input-py">
+<h3>input.py<a class="headerlink" href="#input-py" title="Permalink to this headline">¶</a></h3>
+<p>First we add some general QCD flags</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">conf</span><span class="o">=</span><span class="p">{}</span>
+
+<span class="c1">#--setup posterior sampling</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;bootstrap&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;flat par&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;ftol&#39;</span><span class="p">]</span><span class="o">=</span><span class="mf">1e-8</span>
+
+<span class="c1">#--setup qcd evolution</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;dglap mode&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;truncated&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;alphaSmode&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;backward&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NLO&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;Q20&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="mf">1.27</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>We now add addtional flags specific to DIS.
+In python we call DIS as IDIS to avoid clash
+with python’s internal library that is also called
+dis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--setup for idis</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;tmc&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;ht&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;nuc smearing&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;sidis nuc smearing&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;hq&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="c1">#--grids</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;path2idistab&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/grids/grids-idis/distab/&#39;</span><span class="o">%</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FITPACK&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice that the path is relative to an enviroment variable <cite>FITPACK</cite> which
+need to be set in our commadline rc file.</p>
+<p>Next we create a space for the datasets</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--datasets</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+</pre></div>
+</div>
+<p>and fill the entries with world  DIS datasets</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--lepton-hadron reactions</span>
+<span class="c1">##--IDIS</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10010</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10010.xlsx&#39;</span> <span class="c1"># proton   | F2            | SLAC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10011</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10011.xlsx&#39;</span> <span class="c1"># deuteron | F2            | SLAC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10016</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10016.xlsx&#39;</span> <span class="c1"># proton   | F2            | BCDMS</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10017</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10017.xlsx&#39;</span> <span class="c1"># deuteron | F2            | BCDMS</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10020</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10020.xlsx&#39;</span> <span class="c1"># proton   | F2            | NMC</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;xlsx&#39;</span><span class="p">][</span><span class="mi">10021</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;idis/expdata/10021.xlsx&#39;</span> <span class="c1"># d/p      | F2d/F2p       | NMC</span>
+</pre></div>
+</div>
+<p>The datasets are located at <cite>fitpack/database</cite> and can be viewed with
+a spreadsheed reader. Next we specify DIS cuts</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Q2cut</span><span class="o">=</span><span class="mf">1.3</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">W2cut</span><span class="o">=</span><span class="mf">10.0</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;filters&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;filters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Q2&gt;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">Q2cut</span><span class="p">)</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;filters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;W2&gt;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">W2cut</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In addition we have to add normalization parameters to be fitted.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">][</span><span class="mi">10010</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">8.00000e-01</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">1.20000e+00</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">][</span><span class="mi">10011</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">8.00000e-01</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">1.20000e+00</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">][</span><span class="mi">10016</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">8.00000e-01</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">1.20000e+00</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">][</span><span class="mi">10017</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">8.00000e-01</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">1.20000e+00</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datasets&#39;</span><span class="p">][</span><span class="s1">&#39;idis&#39;</span><span class="p">][</span><span class="s1">&#39;norm&#39;</span><span class="p">][</span><span class="mi">10020</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">8.00000e-01</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">1.20000e+00</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <cite>min</cite> and <cite>max</cite> specify the allowed ranges for these parameters while
+the actual normalization uncertaninty is specified within each <cite>xlsx</cite> table.</p>
+<p>We proceed now to specify the paramters for the <cite>pdfs</cite>. Firts we need
+to specify the parametrization. This is done as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;pdf parametrization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>This indicates that the fitter will load the parametrization inside
+<cite>fitpack/qcdlib/pdf2.py</cite>.  You can create your own version e.g.
+fitpack/qcdlib/pdfX.py` and adjust
+<cite>fitpack/fitlib/parman.py</cite>
+<cite>fitpack/fitlib/resman.py</cite>
+accordingly</p>
+<p>We next create an entry called <cite>params</cite> followed by entries for the pdf parameters</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--parameters</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;g1 N&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">True</span> <span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;g1 a&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">1.9</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;g1 b&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;uv1 N&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">True</span> <span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;uv1 a&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;uv1 b&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;dv1 N&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">True</span> <span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;dv1 a&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;dv1 b&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;db1 N&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;db1 a&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;db1 b&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;ub1 N&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;ub1 a&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;ub1 b&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;s1 N&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;s1 a&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;s1 b&#39;</span><span class="p">]</span>    <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sb1 N&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;s1 N&#39;</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sb1 a&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;s1 a&#39;</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sb1 b&#39;</span><span class="p">]</span>   <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;s1 b&#39;</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea1 N&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea1 a&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">1.9</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea1 b&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea2 N&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>     <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;sea1 N&#39;</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea2 a&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">1.9</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;sea1 a&#39;</span><span class="p">}</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;pdf&#39;</span><span class="p">][</span><span class="s1">&#39;sea2 b&#39;</span><span class="p">]</span>  <span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>    <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>     <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>    <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;fixed&#39;</span><span class="p">:</span> <span class="s1">&#39;sea1 b&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><cite>min</cite> and <cite>max</cite> determines the allowed ranges for the parameters to vary.
+The entry  <cite>fixed</cite> works as follow:</p>
+<ul class="simple">
+<li><p><strong>False</strong>: the parameter is free to vary</p></li>
+<li><p><strong>True</strong>: the parameter is fixed to the numerical value in entry  <cite>value</cite></p></li>
+<li><p><strong>other</strong>: the parameter is fixed to be the same as another parmeter that has that entry</p></li>
+</ul>
+</div>
+<div class="section" id="driver-py">
+<h3>driver.py<a class="headerlink" href="#driver-py" title="Permalink to this headline">¶</a></h3>
+<p>First make this a python executable by adding the following line
+at the begining</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+</pre></div>
+</div>
+<p>Then in the shell  type</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chmod +x driver.py
+</pre></div>
+</div>
+<p>Then you should be able execute it as</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./driver.py
+</pre></div>
+</div>
+<p>Now we start crafting the driver. First add the folloing
+imports</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">py</span>
+
+<span class="c1">#--from fitlib</span>
+<span class="kn">import</span> <span class="nn">tools.config</span>
+<span class="kn">from</span>  <span class="nn">fitlib.simple</span> <span class="kn">import</span> <span class="n">MAXLIKE</span>
+</pre></div>
+</div>
+<p>In this example, we use the fitter code from <cite>fitpack/fitlib/simple.py</cite>.
+The class <cite>MAXLIKE</cite> orchestrates all the additionals setups
+that is needed to make the fit with the specs from the <cite>input.py</cite></p>
+<p>We now proceed to create a main to call the run
+the <cite>MAXLIKE</cite> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main1</span><span class="p">():</span>
+
+    <span class="n">Input</span><span class="o">=</span><span class="s1">&#39;./input.py&#39;</span> <span class="c1">#--path to inputfile</span>
+    <span class="n">ncores</span><span class="o">=</span><span class="mi">2</span>   <span class="c1">#--number of cores to be used</span>
+    <span class="n">MAXLIKE</span><span class="p">(</span><span class="n">Input</span><span class="p">,</span><span class="n">ncores</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Comments:</p>
+<ul class="simple">
+<li><p><strong>Input</strong>: this is the path to the <cite>input.py</cite>.
+You can name the input file as with other name as needed.</p></li>
+<li><p><strong>ncores</strong>: physical cpu cores where the code will run in parallel.</p></li>
+</ul>
+<p>Add the execution block at the end</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">main1</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run the script and the code should start the fitting process.
+Upon completion the code generates two files</p>
+<ul class="simple">
+<li><p><strong>output.py</strong>: This code is the same as the <cite>input.py</cite>,
+but with the parameters of fit. You can run the fitting
+process again using the new input file and see that the chi2
+are already small.</p></li>
+<li><p><strong>summary</strong>: The chi2 summary of the fit.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="compute-pdfs-and-dis-observables">
+<h2>2. Compute PDFs and DIS observables<a class="headerlink" href="#compute-pdfs-and-dis-observables" title="Permalink to this headline">¶</a></h2>
+<p>We proceed to use the results from the <cite>output.py</cite> to compute
+PDF and DIS observables. There are many ways you can do this,
+and it depends on your knowdlege of the JAM ecosystem.
+Here we will show a simple way to do this, and craft
+the code lines in the existing <cite>driver.py</cite>.</p>
+<p>Firts with need to add some additional imports</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--from tools</span>
+<span class="kn">from</span> <span class="nn">tools.tools</span>     <span class="kn">import</span> <span class="n">checkdir</span><span class="p">,</span><span class="n">save</span><span class="p">,</span><span class="n">load</span>
+<span class="kn">from</span> <span class="nn">tools.config</span>    <span class="kn">import</span> <span class="n">load_config</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">options</span>
+<span class="kn">from</span> <span class="nn">tools.inputmod</span>  <span class="kn">import</span> <span class="n">INPUTMOD</span>
+<span class="kn">from</span> <span class="nn">tools.randomstr</span> <span class="kn">import</span> <span class="n">id_generator</span>
+
+<span class="c1">#--from fitlib</span>
+<span class="kn">from</span> <span class="nn">fitlib.resman</span> <span class="kn">import</span> <span class="n">RESMAN</span>
+</pre></div>
+</div>
+<p>The strcture of the code should look like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main2</span><span class="p">():</span>
+
+    <span class="c1">#--load input</span>
+    <span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;./output.py&#39;</span><span class="p">)</span>
+
+    <span class="c1">#--initialize resman</span>
+    <span class="n">nworkers</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">resman</span><span class="o">=</span><span class="n">RESMAN</span><span class="p">(</span><span class="n">nworkers</span><span class="p">,</span><span class="n">parallel</span><span class="p">,</span><span class="n">datasets</span><span class="p">)</span>
+    <span class="n">parman</span><span class="o">=</span><span class="n">resman</span><span class="o">.</span><span class="n">parman</span>
+
+    <span class="c1">#..DO SOME CALCS..</span>
+
+    <span class="c1">#--close resman</span>
+    <span class="n">resman</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here we first load the <cite>output.py</cite> into the dictionary <cite>conf</cite>.
+In JAM <cite>conf</cite> is like analogous to a global common block in
+fortran. Unlike fortran where we can only store numbers,
+strings, in <cite>conf</cite> is a dictionary and in JAM we store
+instantons of classes such as <cite>pdf</cite> from which we can
+compute values for the pdfs.</p>
+<p>Next we launch the <cite>RESMAN</cite> class where we pass the following
+parameters: <cite>nworkers</cite>, <cite>parallel</cite> and <cite>datasets</cite>.
+The first two specify the parallelization in currently the codes
+only parallelizes the calculation of the chi2 (which involves)
+<cite>datasets</cite>. So if <cite>datasets=False</cite>, there is not point in
+using paralleization resources. In that case we just use
+<cite>nworkers=1</cite>, <cite>parallel=False</cite>.
+On the other hand if you want to be able to compute chi2,
+theory predictions for the datasets then you can set those
+parameters as
+<cite>nworkers=4</cite>, <cite>parallel=True</cite> and <cite>datasets=True</cite></p>
+<p>It is important that you reade the</p>
+<ul class="simple">
+<li><p><cite>fitpack/fitlib/resman.py</cite></p></li>
+<li><p><cite>fitpack/fitlib/parman.py</cite>.</p></li>
+</ul>
+<p>where Abehind the scenes all the setups occur when loading
+the class <cite>RESMAN</cite></p>
+<p>To complete the task for this section lets first solve DGLAP
+and evalute PDFs for some <span class="math notranslate nohighlight">\(x,Q^2\)</span>. To do that we simple
+modify the <cite>main2</cite> in the <cite>driver.py</cite> as follow</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main2</span><span class="p">():</span>
+
+    <span class="c1">#--load input</span>
+    <span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;./output.py&#39;</span><span class="p">)</span>
+
+    <span class="c1">#--initialize resman</span>
+    <span class="n">nworkers</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">resman</span><span class="o">=</span><span class="n">RESMAN</span><span class="p">(</span><span class="n">nworkers</span><span class="p">,</span><span class="n">parallel</span><span class="p">,</span><span class="n">datasets</span><span class="p">)</span>
+    <span class="n">parman</span><span class="o">=</span><span class="n">resman</span><span class="o">.</span><span class="n">parman</span>
+
+    <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span>
+    <span class="n">Q2</span><span class="o">=</span><span class="mf">10.0</span>
+    <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">Q2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_xF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_xF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_xF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">))</span>
+
+    <span class="c1">#--close resman</span>
+    <span class="n">resman</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The entry <cite>pdf</cite> contains an instanton of the class PDF. The class
+is located inside <cite>fitpack/qcdlib/pdfX.py</cite>, where <cite>X</cite> is the specific
+parametrization indicated in your <cite>input.py</cite>
+The method <cite>evolve</cite> evolves the pdfs from the inputscale to the specified
+value of <span class="math notranslate nohighlight">\(Q^2\)</span></p>
+<p>Finally, lets compute DIS observables. This lets create <cite>main3</cite> as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main3</span><span class="p">():</span>
+
+    <span class="c1">#--load input</span>
+    <span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;./output.py&#39;</span><span class="p">)</span>
+
+    <span class="c1">#--initialize resman</span>
+    <span class="n">nworkers</span><span class="o">=</span><span class="mi">2</span>
+    <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">resman</span><span class="o">=</span><span class="n">RESMAN</span><span class="p">(</span><span class="n">nworkers</span><span class="p">,</span><span class="n">parallel</span><span class="p">,</span><span class="n">datasets</span><span class="p">)</span>
+    <span class="n">parman</span><span class="o">=</span><span class="n">resman</span><span class="o">.</span><span class="n">parman</span>
+
+    <span class="n">par</span><span class="o">=</span><span class="n">parman</span><span class="o">.</span><span class="n">par</span>
+    <span class="n">res</span><span class="p">,</span><span class="n">rres</span><span class="p">,</span><span class="n">nres</span> <span class="o">=</span> <span class="n">resman</span><span class="o">.</span><span class="n">get_residuals</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;npts=&#39;</span><span class="p">,</span><span class="n">res</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chi2=&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">res</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">tabs</span><span class="o">=</span><span class="n">resman</span><span class="o">.</span><span class="n">idisres</span><span class="o">.</span><span class="n">tabs</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tabs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X=&#39;</span><span class="p">,</span><span class="n">tabs</span><span class="p">[</span><span class="n">_</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q2=&#39;</span><span class="p">,</span><span class="n">tabs</span><span class="p">[</span><span class="n">_</span><span class="p">][</span><span class="s1">&#39;Q2&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value=&#39;</span><span class="p">,</span><span class="n">tabs</span><span class="p">[</span><span class="n">_</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alpha=&#39;</span><span class="p">,</span><span class="n">tabs</span><span class="p">[</span><span class="n">_</span><span class="p">][</span><span class="s1">&#39;alpha&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;theory=&#39;</span><span class="p">,</span><span class="n">tabs</span><span class="p">[</span><span class="n">_</span><span class="p">][</span><span class="s1">&#39;thy&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+
+
+    <span class="c1">#--close resman</span>
+    <span class="n">resman</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>3. Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Before engauging with more complicated setups, here we provide
+some homework.</p>
+<ul class="simple">
+<li><p>Cross sections, structure function level.</p>
+<ul>
+<li><p>Plot <span class="math notranslate nohighlight">\(F_2^p\)</span> as a function of <span class="math notranslate nohighlight">\(Q^2\)</span> for fixed values
+<span class="math notranslate nohighlight">\(x\)</span>. Do you see scaling? Hint: try to tap into
+the method <cite>get_FXN</cite> that is defined at <cite>fitpack/obslib/idis/theory.py</cite>.
+This can be accessed by an entry in the <cite>conf</cite> after loading <cite>RESMAN</cite></p></li>
+<li><p>Make data vs theory for one of the datasets e.g. SLACp. See how good
+is the agreement.</p></li>
+<li><p>Decrease the <span class="math notranslate nohighlight">\(W^2_{\rm cut}\)</span> in the input file and see how good
+or bad is the agreement in predicting kinematic regions where the data
+was not included. Do you understand what is going on physically ?</p></li>
+</ul>
+</li>
+<li><p>Plots at the pdf level</p>
+<ul>
+<li><p>Make plots for pdfs. Try to show plot different flavors at different scales.
+See if the PDF looks like those found at <a class="reference external" href="https://inspirehep.net/record/1734309">https://inspirehep.net/record/1734309</a></p></li>
+<li><p>Compute the momentum sum rule and show that is scale independent.</p></li>
+<li><p>Compute the quark sum rules and show that they are also scale independet.</p></li>
+</ul>
+</li>
+<li><p>Changing the parametrizarion</p>
+<ul>
+<li><p>Create a new pdfX.py script using the pdf2.py as a template and try to change
+the parametrization and make new fits.
+Hints: You will have to addapt the <cite>input.py</cite>, <cite>paraman.py</cite>
+and <cite>resman.py</cite> accordingly.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="farm.html" class="btn btn-neutral float-right" title="using the farm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, N. Sato
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

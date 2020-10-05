@@ -1,0 +1,17 @@
+prediction   reaction        idx                  col  npts       chi2  chi2/npts       norm 
+     False      pidis      10021           SLAC(E143)     9       6.22       0.69       1.01 
+     False      pidis      10022           SLAC(E143)     9       6.33       0.70       0.98 
+     False      pidis      10001              COMPASS     5       4.59       0.92       1.00 
+     False      pidis      10027           SLAC(E155)    16      25.38       1.59       1.01 
+     False      pidis      10029           SLAC(E155)    16      23.74       1.48       1.11 
+     False      pidis      10033                  SMC     6       3.82       0.64 
+     False      pidis      10002              COMPASS     5      12.03       2.41       0.96 
+     False      pidis      10003              COMPASS    17      21.98       1.29       0.98 
+     False      pidis      10004                  EMC     5       1.05       0.21       1.01 
+     False      pidis      10005               HERMES     2       1.69       0.84 
+     False      pidis      10006               HERMES     4       5.00       1.25 
+     False      pidis      10007               HERMES     4       7.49       1.87 
+     False      pidis      10035                  SMC     6       8.28       1.38 
+     False      pidis      10034                  SMC     6      11.96       1.99 
+     False      pidis      10036                  SMC     6       8.31       1.39 
+                                                        116     147.86       1.27           

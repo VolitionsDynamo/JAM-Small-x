@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting started &mdash; JAM 12-04-19 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Simulation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> JAM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">JAM ECOSYSTEM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Gettin Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input.html">Input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observables/index.html">Observables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farm.html">JLab computing for JAM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Simulation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Simulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#things-to-have-in-your-wdir">1. Things to have in your wdir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-driver-py">2. The driver.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lhapdf">LHAPDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulate-statistical-uncertainties">Simulate statistical uncertainties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Simulation</a> &raquo;</li>
+        
+      <li>Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/simulation/start.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>In this tuotrial we will show how to use existing MC runs (msr) files to
+compute DIS observables. A vanilla setup which includes MC samples extracted
+from DIS data is available  at
+<a class="reference external" href="https://github.com/JeffersonLab/analysis-simul">https://github.com/JeffersonLab/analysis-simul</a> .</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">conf</span><span class="o">=</span><span class="p">{}</span>
+
+<span class="c1">#--setup posterior sampling</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;bootstrap&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;flat par&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;ftol&#39;</span><span class="p">]</span><span class="o">=</span><span class="mf">1e-8</span>
+
+<span class="c1">#--setup qcd evolution</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;dglap mode&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;truncated&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;alphaSmode&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;backward&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NLO&#39;</span>
+<span class="n">conf</span><span class="p">[</span><span class="s1">&#39;Q20&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="mf">1.27</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="section" id="things-to-have-in-your-wdir">
+<h2>1. Things to have in your wdir<a class="headerlink" href="#things-to-have-in-your-wdir" title="Permalink to this headline">¶</a></h2>
+<p>Unless you are are using the example repo,
+we will assume that you have folders with msr files
+and msr-inspected files.</p>
+</div>
+<div class="section" id="the-driver-py">
+<h2>2. The driver.py<a class="headerlink" href="#the-driver-py" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">driver.py</span></code> for a basic the simulation
+looks like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">kmeanconf</span> <span class="k">as</span> <span class="nn">kc</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">inspect</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">predict</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">classifier</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">optpriors</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">jar</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">mlsamples</span>
+<span class="kn">from</span> <span class="nn">analysis.corelib</span> <span class="kn">import</span> <span class="n">summary</span>
+<span class="kn">from</span> <span class="nn">analysis.qpdlib</span>  <span class="kn">import</span> <span class="n">tolhapdf</span>
+<span class="kn">from</span> <span class="nn">analysis.qpdlib</span>  <span class="kn">import</span> <span class="n">benchmark</span>
+<span class="kn">from</span> <span class="nn">analysis.simlib</span>  <span class="kn">import</span> <span class="n">sim</span>
+
+<span class="n">wdir</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">#--initial processeing</span>
+<span class="c1">#inspect.get_msr_inspected(wdir)</span>
+<span class="c1">#predict.get_predictions(wdir)</span>
+<span class="c1">#classifier.gen_labels(wdir,kc)</span>
+<span class="c1">#jar.gen_jar_file(wdir,kc)</span>
+<span class="c1">#summary.print_summary(wdir,kc)</span>
+<span class="c1">##optpriors.gen_priors(wdir,kc,1000)</span>
+
+
+<span class="c1">#--DIS simulation (level 0)</span>
+
+<span class="c1">#--gen kinematics:</span>
+<span class="c1">#--option==0 for lhapdf grid. To be use to create stfuncs grids</span>
+<span class="c1">#--option==1 physical grid using root_s</span>
+<span class="n">X</span><span class="p">,</span><span class="n">Q2</span><span class="o">=</span><span class="n">sim</span><span class="o">.</span><span class="n">get_xQ2_grid</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">rs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">nQ2</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">stf</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;F2&#39;</span><span class="p">,</span><span class="s1">&#39;FL&#39;</span><span class="p">,</span><span class="s1">&#39;F3&#39;</span><span class="p">]</span>
+<span class="n">idxs</span><span class="o">=</span><span class="p">[</span><span class="mi">90001</span><span class="p">,</span><span class="mi">90002</span><span class="p">,</span><span class="mi">90003</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stf</span><span class="p">)):</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">gen_idis_xlsx</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="n">stf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">X</span><span class="p">,</span><span class="n">Q2</span><span class="p">)</span>
+
+<span class="n">conf</span><span class="o">=</span><span class="n">sim</span><span class="o">.</span><span class="n">gen_conf_idis</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">)</span>
+<span class="n">predict</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">mod_conf</span><span class="o">=</span><span class="n">conf</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">update_idis_tabs</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">gen_lhapdf_dat_file</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">,</span><span class="n">setlabel</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dirname</span><span class="o">=</span><span class="s1">&#39;JAM4EIC&#39;</span><span class="p">)</span>
+
+<span class="n">info</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">info</span><span class="p">[</span><span class="s1">&#39;&lt;description&gt;&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;F2,F2 simulation for EIC&#39;</span>
+<span class="n">info</span><span class="p">[</span><span class="s1">&#39;&lt;index&gt;&#39;</span><span class="p">]</span>       <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+<span class="n">info</span><span class="p">[</span><span class="s1">&#39;&lt;authors&gt;&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="s1">&#39;JAM Collaboration&#39;</span>
+<span class="n">info</span><span class="p">[</span><span class="s1">&#39;&lt;reference&gt;&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;jam19&#39;</span>
+<span class="n">info</span><span class="p">[</span><span class="s1">&#39;&lt;particle&gt;&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="s1">&#39;p&#39;</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">gen_lhapdf_info_file</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">dirname</span><span class="o">=</span><span class="s1">&#39;JAM4EIC&#39;</span><span class="p">)</span>
+
+<span class="n">sim</span><span class="o">.</span><span class="n">benchmark</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">idxs</span><span class="p">,</span><span class="s1">&#39;JAM4EIC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As usual, it is expected that you run the <code class="docutils literal notranslate"><span class="pre">driver.py</span></code> as</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./driver.py  &lt;path-to-folder-containing msr folder &gt;
+</pre></div>
+</div>
+<div class="section" id="basic-usage">
+<h3>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>sim.get_xQ2_grid</strong>: this function generates the <code class="docutils literal notranslate"><span class="pre">X-Q2</span></code> grid.
+<strong>option=0</strong> for lhapdf like grid and <strong>option=1</strong> for custum grid.</p></li>
+<li><p><strong>sim.gen_idis_xlsx</strong>: this generates the corresponding xlsx file
+inside <code class="docutils literal notranslate"><span class="pre">&lt;wdir&gt;/sim/idx.xlsx</span></code></p></li>
+<li><p><strong>sim.gen_conf_idis</strong>: this adjust the <code class="docutils literal notranslate"><span class="pre">conf</span></code> dictionary to only
+use the xlsx file for the simulation</p></li>
+<li><p><strong>get_predictions</strong>: this will launch <code class="docutils literal notranslate"><span class="pre">resman</span></code> and compute the
+observables for all the replicas in <code class="docutils literal notranslate"><span class="pre">msr-inspected</span></code></p></li>
+<li><p><strong>update_idis_tabs</strong>: this will overwrite the previously generated
+xlsx files to add numerical values for the observable
+(recall only one observable per table is allowed)</p></li>
+</ul>
+</div>
+<div class="section" id="lhapdf">
+<h3>LHAPDF<a class="headerlink" href="#lhapdf" title="Permalink to this headline">¶</a></h3>
+<p>If the simulated data is now needed to be converted into LHAPDF format we
+proceed to use the following routines</p>
+<ul class="simple">
+<li><p><strong>gen_lhapdf_dat_file</strong>: this will generate the tables in LHAPDF format</p></li>
+<li><p><strong>sim.gen_lhapdf_info_file</strong>: this will generate the info file which is
+required by the LHAPDF program to load the tables</p></li>
+<li><p><strong>sim.benchmark</strong>: as a sanity check we need to load the tables in lhapdf
+and compare for each <code class="docutils literal notranslate"><span class="pre">x-Q2</span></code> the true values and the interpolated values.
+The benchmark will create temporary symlinks at your lhapdf/share folder
+and upon completion it remove the symlinks. If you run into an error it
+means you do not have permissions to write on lhapdf installation folder.
+i.e. you need to have your own lhapdf installation.
+The rutine will generate benchmark plots at
+<code class="docutils literal notranslate"><span class="pre">&lt;wdir&gt;/gallery/benchmark-&lt;name&gt;-idx.pdf</span></code>.
+You should see plot like this:</p></li>
+</ul>
+<img alt="../_images/benchmark-JAM4EIC-90001.png" src="../_images/benchmark-JAM4EIC-90001.png" />
+<p>Make sure that the relative errors for your observables are small enough (~1e-3)
+for further applications.</p>
+</div>
+<div class="section" id="simulate-statistical-uncertainties">
+<h3>Simulate statistical uncertainties<a class="headerlink" href="#simulate-statistical-uncertainties" title="Permalink to this headline">¶</a></h3>
+<p>The relevant code lines to be added in the <code class="docutils literal notranslate"><span class="pre">driver.py</span></code>
+are the following</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#--DIS simulation (level 1)</span>
+
+<span class="c1">#--physical params</span>
+<span class="n">rs</span><span class="o">=</span> <span class="mf">140.7</span>
+<span class="n">lum</span><span class="o">=</span><span class="s1">&#39;10:fb-1&#39;</span>
+
+<span class="c1">#--lhapdf set and stf idx</span>
+<span class="n">iset</span><span class="p">,</span><span class="n">iF2</span><span class="p">,</span><span class="n">iFL</span><span class="p">,</span><span class="n">iF3</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">90001</span><span class="p">,</span><span class="mi">90002</span><span class="p">,</span><span class="mi">90003</span>
+
+<span class="c1">#--names for the xlsx table</span>
+<span class="n">dirname</span><span class="o">=</span><span class="s1">&#39;JAM4EIC&#39;</span>
+<span class="n">idx</span><span class="o">=</span><span class="mi">90100</span>
+
+<span class="n">data</span><span class="o">=</span><span class="n">sim</span><span class="o">.</span><span class="n">get_xQ2_bins</span><span class="p">(</span><span class="n">rs</span><span class="o">=</span><span class="n">rs</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">nQ2</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">sign</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">W2cut</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">plot_kinematics</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">gen_sim_idis_xlsx</span><span class="p">(</span><span class="n">wdir</span><span class="p">,</span><span class="n">dirname</span><span class="p">,</span><span class="n">iset</span><span class="p">,</span><span class="n">iF2</span><span class="p">,</span><span class="n">iFL</span><span class="p">,</span><span class="n">iF3</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">idx</span><span class="p">,</span><span class="n">lum</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>iset</strong>: is the index associated with the lhapdf stfuncs tables
+generated before</p></li>
+<li><p><strong>iF2,iFL,iF3</strong>: are the flavor indices as specified in the previous steps</p></li>
+<li><p><strong>sim.get_xQ2_bins</strong>: this generates a dictionary of bins in x and Q2
+in log space.</p></li>
+<li><p><strong>gen_sim_idis_xlsx</strong>: this rouine will produce a an xlsx table
+with simulated statistical uncertainties.</p></li>
+<li><p><strong>sim.plot_kinematics</strong>: a simple routine to plot the generated kinematics</p></li>
+</ul>
+<img alt="../_images/bins.png" src="../_images/bins.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, N. Sato
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

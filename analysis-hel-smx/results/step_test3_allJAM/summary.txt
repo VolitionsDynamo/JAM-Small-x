@@ -1,0 +1,24 @@
+prediction   reaction        idx                  col  npts       chi2  chi2/npts       norm 
+     False      pidis      10001              COMPASS    11      16.32       1.48       0.93 
+     False      pidis      10002              COMPASS    11      30.88       2.81       0.97 
+     False      pidis      10003              COMPASS    35      55.63       1.59       1.01 
+     False      pidis      10004                  EMC    10       2.88       0.29       0.98 
+     False      pidis      10005               HERMES     7       3.54       0.51 
+     False      pidis      10006               HERMES    25      31.31       1.25 
+     False      pidis      10007               HERMES    25      14.52       0.58 
+     False      pidis      10016      JLabHB(EG1DVCS)    73      76.62       1.05 
+     False      pidis      10017      JLabHB(EG1DVCS)   117     404.69       3.46 
+     False      pidis      10021           SLAC(E143)    56      60.88       1.09       0.98 
+     False      pidis      10022           SLAC(E143)    56      57.21       1.02       1.10 
+     False      pidis      10027           SLAC(E155)    65      70.36       1.08       0.97 
+     False      pidis      10029           SLAC(E155)    65      99.87       1.54       1.19 
+     False      pidis      10032          SLACE80E130    19      15.74       0.83 
+     False      pidis      10033                  SMC     7       3.89       0.56 
+     False      pidis      10034                  SMC    11      17.04       1.55 
+     False      pidis      10035                  SMC     7      12.37       1.77 
+     False      pidis      10036                  SMC    11       4.66       0.42 
+     False      pidis      10039         JLabHB(EG1b)    20      16.90       0.84 
+     False      pidis      10040         JLabHB(EG1b)    92      77.25       0.84 
+     False      pidis      10043         JLabHB(EG1b)    88     107.96       1.23 
+     False      pidis      10044         JLabHB(EG1b)   385     375.71       0.98 
+                                                       1196    1556.24       1.30           

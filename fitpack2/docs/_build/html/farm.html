@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JLab computing for JAM &mdash; JAM 12-04-19 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Simulation" href="simulation/index.html" />
+    <link rel="prev" title="Inclusive DIS" href="observables/idis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> JAM
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">JAM ECOSYSTEM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Gettin Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observables/index.html">Observables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JLab computing for JAM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-heavy-programs">Running heavy programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-a-node-from-the-farm">Getting a node from the farm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/index.html">Simulation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>JLab computing for JAM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/farm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jlab-computing-for-jam">
+<h1>JLab computing for JAM<a class="headerlink" href="#jlab-computing-for-jam" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Get a JLab account</p></li>
+<li><p>Contact N. Sato to give you access to the unix JAM group
+as well as to additional computing resources at the lab.</p></li>
+</ul>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>From your local machine ssh into Jlab systems</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh -4 -XY  &lt;username&gt;@login.jlab.org
+ssh -XY     jlabl1
+ssh -XY     thypc21
+</pre></div>
+</div>
+<p>After this you have landed inside <code class="docutils literal notranslate"><span class="pre">thypc21</span></code>. As usual
+you need to customize your shell enviroiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>  ~
+cp ../.cshrc  ./
+cp ../.tmux-completion.tcsh  ./
+cp ../.tmux.conf ./
+cp ../.vimrc ./
+cp -r ../.vim  ./
+</pre></div>
+</div>
+<p>Fireup a tmux session</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tmux new-session -s <span class="nb">test</span>
+</pre></div>
+</div>
+<p>Next, access to JAM’s working directory</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /work/JAM
+</pre></div>
+</div>
+<p>Create a folder under your name if is not present and
+use this space for all of your work.</p>
+<p><strong>ATTENTION</strong>: DO NOT execute any heavy computing on <code class="docutils literal notranslate"><span class="pre">thypc21</span></code>. Use this
+machine to use tmux and other simple things as vim.</p>
+</div>
+<div class="section" id="running-heavy-programs">
+<h2>Running heavy programs<a class="headerlink" href="#running-heavy-programs" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned before, use <code class="docutils literal notranslate"><span class="pre">thypc21</span></code> as your portal to
+JLab computing systems. You should have access to</p>
+<ol class="arabic simple">
+<li><p><strong>ifarm</strong>: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">ifarm</span></code></p></li>
+<li><p><strong>vertex</strong>: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">vertex</span></code></p></li>
+</ol>
+<p>The optimal workflow is to use ssh into any of these systems
+from a tmux window launched from <code class="docutils literal notranslate"><span class="pre">thypc21</span></code></p>
+<p>When sshing into <code class="docutils literal notranslate"><span class="pre">ifarm</span></code>, you land on arbitrary machine. However
+all the machines will use the same shell setups. In contrast
+when sshing into <code class="docutils literal notranslate"><span class="pre">vertex</span></code>, you land on a different home directory
+hence you need to makesure to adjust the shell setups accordingly.</p>
+</div>
+<div class="section" id="getting-a-node-from-the-farm">
+<h2>Getting a node from the farm<a class="headerlink" href="#getting-a-node-from-the-farm" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ifarm</span></code> is shared by many users who might be running lots
+of programs. Also the cpu usage is limited. For instance the system
+will kill your jam script python execution if running it with 20 slaves.</p>
+<p>To access to more cpu resorces you need to use salloc</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>salloc --partition theory -n <span class="m">1</span>
+srun --pty csh
+</pre></div>
+</div>
+<p>For more option, consult the page <a class="reference external" href="https://slurm.schedmd.com/salloc.html">https://slurm.schedmd.com/salloc.html</a>.</p>
+<p>In addition you can access to gpu resources via</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>salloc --partition gpu  --gres gpu:1
+srun --pty csh
+</pre></div>
+</div>
+<p>Again, make sure your <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session/windows/panels are all launched from
+<code class="docutils literal notranslate"><span class="pre">thypc21</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="simulation/index.html" class="btn btn-neutral float-right" title="Simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="observables/idis.html" class="btn btn-neutral float-left" title="Inclusive DIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, N. Sato
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
